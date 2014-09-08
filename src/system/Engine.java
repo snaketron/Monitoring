@@ -58,9 +58,11 @@ public class Engine implements IEngineEvent, ISympathyEvent, Runnable {
 		this.sympathy.addSympathyListeners(this);
 	}
 	
+	
     public void addMoteListeners(IMoteEvent me) {
     	moteListeners.add(me);
     }
+    
     
     public void addDataListeners(IDataEvent de) {
     	dataListeners.add(de);
@@ -112,6 +114,7 @@ public class Engine implements IEngineEvent, ISympathyEvent, Runnable {
 		this.exit = true;
 	}
 
+	
 	private void doUsbLoop() {		
 		String line = null;
 		try {
@@ -157,6 +160,7 @@ public class Engine implements IEngineEvent, ISympathyEvent, Runnable {
 		}
 	}
 	
+	
 	private void doFileLoop() {
 		String line = null;
 		try {
@@ -196,10 +200,7 @@ public class Engine implements IEngineEvent, ISympathyEvent, Runnable {
 				}
 				
 				long time = Long.valueOf(coojaReader.getTimeReader().readLine());
-//				if(startingTime == 0) {
-//					startingTime = time;
-//				}
-				
+
 				if(time - startingTime >= SympathyConst.SYMPATHY_PERIOD * 1000) {
 					startingTime = (int)SympathyConst.SYMPATHY_PERIOD * 1000 * detIteration;
 					detIteration++;
@@ -270,6 +271,7 @@ public class Engine implements IEngineEvent, ISympathyEvent, Runnable {
 		}
 	}
 	
+	
 	@Override
 	public void sympathyEvent() {
 		synchronized (motesMap) {
@@ -299,6 +301,7 @@ public class Engine implements IEngineEvent, ISympathyEvent, Runnable {
 		sympathy.setActive(true);
 	}
 
+	
 	@Override
 	public void stopDetection() {
 		sympathy.setActive(false);

@@ -6,14 +6,11 @@ public interface SympathyConst {
 	/**set in tinyos project to 4 sec**/
 	static final double PERIOD_FOR_DATA = 4;
 	
-	/**set in tinyos project to 30 sec**/
-	static final double PERIOD_FOR_NETWORK = 9;
-	
 	/**messages expected in a period (defined in tinos)**/
 	static final double DATA_EXPECTED = SYMPATHY_PERIOD / PERIOD_FOR_DATA;
 	
 	/**messages expected in a period (defined in tinos)**/
-	static final double DATA_EXPECTED_FROM_PARENT = PERIOD_FOR_NETWORK / PERIOD_FOR_DATA;
+	static final double DATA_EXPECTED_FROM_PARENT = SYMPATHY_PERIOD / PERIOD_FOR_DATA;
 	
 	/**msg count threshold : e.g. if 90% of expected messages are received => good**/
 	static final double MSG_COUNT_THRESHOLD = 0.7;
@@ -36,7 +33,6 @@ public interface SympathyConst {
 		PARENT_LINK_GOOD,
 		UNKNOWN_PROBLEM
 	}
-	
 	
 	static final double RSSI_MIN = -35;
 	

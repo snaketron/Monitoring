@@ -84,11 +84,11 @@ public class SympathyObservationTree {
 			int tx = parent.getChildrenDataCount().get(mote.getId());
 			System.out.println("parent msg count : " + tx);
 			if((tx / SympathyConst.DATA_EXPECTED_FROM_PARENT) < SympathyConst.MSG_COUNT_THRESHOLD) {
-				return PrimaryObservation.PARENT_LINK_GOOD;
+				return PrimaryObservation.PARENT_LINK_BAD;
 			}
 		}
 		
-		return PrimaryObservation.PARENT_LINK_BAD;
+		return PrimaryObservation.PARENT_LINK_GOOD;
 	}
 	
 	
